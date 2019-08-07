@@ -3,6 +3,7 @@ import { App, View, Page, Navbar, Button } from "framework7-react";
 import { TabList } from "./components/common/tab-list";
 import { CardSwipe } from "./components/common/card-swipe";
 import { GlobalNav } from "./components/global-nav";
+import { FlipCard } from "./components/common/flip-card";
 
 const mockTabs = [
   {
@@ -21,7 +22,7 @@ const mockTabs = [
       />
     )
   },
-  { title: "Sent", content: () => <p>Second tab content</p> }
+  { title: "Sent", content: () => <FlipCard front={(<div className="mockCard"><h3>FRONT OF A CARD</h3><p>Itaque earum rerum hic tenetur a sapiente delectus. Itaque earum rerum hic tenetur a sapiente delectus. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>)} back={(<div className="mockCard"><h3>BACK OF THE CARD</h3><img src="http://fpoimg.com/150x350"/></div>)}/> }
 ];
 export default () => (
   // Main Framework7 App component where we pass Framework7 params

@@ -24,6 +24,7 @@ code {
   margin-top: 50px;
 }
 .mockCard{
+  margin: 0 auto;
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 10px;

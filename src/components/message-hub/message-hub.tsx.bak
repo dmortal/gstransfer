@@ -1,0 +1,42 @@
+/**
+  MessageHub page
+*/
+import * as React from "react";
+// import {Header} from '../common/header';
+// import { TabList } from "./components/common/tab-list";
+// import { CardSwipe } from "./components/common/card-swipe";
+
+export interface IMessageHubProps {
+  f7route: any,
+  f7router: any,
+  cards: any[]
+}
+
+export class MessageHub extends React.Component<
+  IMessageHubProps
+> {
+  private goBack = ()=>{
+    this.props.f7router.back();
+  }
+  private handleNavigation = () => {
+    // @ts-ignore
+    this.$f7router.navigate('/message-summary', {
+      props: {}
+    });
+  }
+  private getTabs = ()=>{
+    const res = [];
+    // Logic to render 'received' cards into a tab - palceholder
+    res.push({title:'Received', content: ()=>(<CardSwipe cards={this.props.cards.filter(card=>card.isReceived)}/>)
+    // Logic to render 'sent' cards into a tab - palceholder
+    res.push({title:'Sent', content: ()=>(<CardSwipe cards={this.props.cards.filter(card=>card.isSent)}/>)
+  }
+  render() {
+    return <Page name="messageHub" className="message-hub">
+      <Navbar>
+        <Header leftIcon={<ChevronLeft onClick={this.goBack}/>}/>
+      </Navbar>
+      <TabList tabs={this.getTabs} />
+    </Page>;
+  }
+}

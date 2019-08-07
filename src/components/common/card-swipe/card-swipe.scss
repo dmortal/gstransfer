@@ -1,0 +1,10 @@
+.swiper-slide{
+  opacity: 0.8;
+  will-change: opacity;
+  &--active{opacity: 1;
+  transition: opacity 0.25s ease-in-out;}
+}
+.card-swipe__count{
+  text-align: center;
+  font-style: italic;
+}
